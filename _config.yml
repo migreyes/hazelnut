@@ -3,9 +3,9 @@ subtitle: Subtitle
 author: Mig Reyes
 description: Description.
 
-auto: true
 source: .
-exclude: .gitignore, .sass-cache, _drafts, _site, public, Gemfile, Gemfile.lock, Rakefile, README.md
+destination: public
+exclude: [_drafts, _site, public, Gemfile, Gemfile.lock, Rakefile, README.md]
 
 permalink: /:categories/:title
 markdown: rdiscount

@@ -1,3 +1,5 @@
 .DS_Store
 .sass-cache
+_source/assets/javascript/scripts.js
+_source/assets/stylesheets/style.css
 public

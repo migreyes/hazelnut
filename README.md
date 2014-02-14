@@ -33,7 +33,7 @@ I’m [a graphic and web designer](http://mig.io) from Chicago. I proudly work a
 Questions?  
 [@migreyes](http://twitter.com/migreyes) on Twitter is your best bet.
 
-Elsewhere online:
+Elsewhere online:  
 http://mig.io  
 http://dribbble.com/migreyes  
 http://instagram.com/migreyes

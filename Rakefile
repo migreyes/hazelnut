@@ -1,9 +1,23 @@
-task :default do
-  system "rm -rf _site"
+url_pow     = "website"
+url_live    = "website.com"
+
+deploy_user = "user@website.com"
+deploy_path = "website.com/location"
+
+github_repo = "user/repository"
+
+desc "Delete old website files to start fresh."
+task :clean do
+  puts "Starting fresh!"
+  system "rm -rf public"
+end
+
+desc "Design, write, and edit live."
+task :default => [:clean] do
   pids = [
     spawn("jekyll -w build"),
-    spawn("sass --watch _includes/sass:assets/stylesheets"),
-    spawn("coffee --bare --watch --join assets/javascript/scripts.js --compile _includes/coffeescript/*.coffee")
+    spawn("sass --watch _source/_assets/sass:_source/assets/stylesheets"),
+    spawn("coffee --bare --watch --join _source/assets/javascript/scripts.js --compile _source/_assets/coffeescript/*.coffee")
   ]
 
   trap "INT" do
@@ -16,30 +30,70 @@ task :default do
   end
 end
 
-task :clean do
-  system "rm -rf _site"
-  puts "Cleaned old site files."
+desc "Creates a Pow link. http://pow.cx"
+task :pow do
+  system "ln -s '#{__dir__}' ~/.pow/#{url_pow}"
+  puts "Set up a Pow site at http://#{url_pow}.dev."
 end
 
+desc "Generate a copy of the most current site."
 task :compile do
   system "jekyll build"
-  system "coffee --bare --join assets/javascript/scripts.js --compile _includes/coffeescript/*.coffee"
+  system "sass --style compressed _source/_assets/sass/style.scss:public/assets/stylesheets/style.css"
+  system "coffee --bare --join public/assets/javascript/scripts.js --compile _source/_assets/coffeescript/*.coffee"
 end
 
+desc "Compress JavaScript."
 task :compress do
-  puts "Compressing assets!"
-  system "sass --style compressed _includes/sass/style.scss:assets/stylesheets/style.css"
-  system "uglifyjs assets/javascript/scripts.js --compress --output assets/javascript/scripts.js"
+  system "uglifyjs public/assets/javascript/scripts.js --compress --output public/assets/javascript/scripts.js"
+  puts "Compressed JavaScript."
 end
 
+desc "Build a clean, compressed copy of the site."
 task :build => [:clean, :compile, :compress] do
-  puts "Done! See it locally at http://mig.dev/"
+  puts "Done! See it locally at http://#{url_pow}.dev, or live at http://#{url_live}."
 end
 
-deploy_user = "user@site.com"
-deploy_path = "site.com/location"
-
+desc "Upload a fresh copy of the site to your server."
 task :deploy => [:build] do
   puts "Deploying at site.com!"
-  system("rsync -avze 'ssh -p 22' --delete _site/ #{deploy_user}:#{deploy_path}")
+  system "rsync -avze 'ssh -p 22' --delete public/ #{deploy_user}:#{deploy_path}"
+end
+
+desc "Upload a copy of your site to the server, and update GitHub."
+# Usage: rake ship "Commit message."
+task :ship do
+  message = ARGV.last
+  task message.to_sym do ; end
+  system "git add -A"
+  system "git commit -am '#{message}'"
+  system "git pull"
+  system "git push"
+  Rake::Task['deploy'].execute
+  puts "Pushed latest to GitHub and deployed to http://#{url_live}."
+end
+
+desc "Builds a fresh copy of your site, then opens it."
+task :view => [:build] do
+  system "open http://#{url_pow}.dev"
+end
+
+namespace :view do
+  desc "View your site live."
+  task :live do
+    system "open http://#{url_live}"
+  end
+
+  desc "Generate an xip.io friendly URL."
+  task :xip do
+    ip = `ifconfig | grep 'inet ' | grep -v '127.0.0.1' | awk '{print $2}' | awk '{ printf "%s", $0 }'`
+    url = "http://#{url_pow}.#{ip}.xip.io/"
+    puts "Opening #{url}…"
+    system "open #{url}"
+  end
+
+  desc "View your project on GitHub."
+  task :github do
+    system "open http://github.com/#{github_repo}"
+  end
 end

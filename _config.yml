@@ -1,11 +1,16 @@
-title: Title
-subtitle: Subtitle
+title: Mig Reyes
 author: Mig Reyes
-description: Description.
+subtitle: "Designer, Basecamp"
+description: Mig is a designer at Basecamp focused on making good things for good people.
 
-source: .
+github: http://github.com/migreyes
+twitter: http://twitter.com/migreyes
+dribbble: http://dribbble.com/migreyes
+instagram: http://instagram.com/migreyes
+
+source: ./_source
 destination: public
-exclude: [_drafts, _site, public, Gemfile, Gemfile.lock, Rakefile, README.md]
+exclude: [public, Gemfile, Gemfile.lock, Rakefile, README.md]
 
 permalink: /:categories/:title
 markdown: rdiscount

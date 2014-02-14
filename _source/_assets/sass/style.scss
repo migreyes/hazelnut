@@ -1,0 +1,80 @@
+// Reset & Mixins ———————————————————————————— •
+// ——————————————————————————————————————————— •
+@charset "UTF-8";
+
+@import
+  'globals/mixins',
+  'globals/reset';
+
+
+// Base Styles ——————————————————————————————— •
+// ——————————————————————————————————————————— •
+
+body {
+  @include border-box;
+  @include font-smoothing(antialiased);
+  background-color: $color-background;
+  color: $color-text;
+  font-family: $font-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  position: relative;
+}
+
+a {
+  color: $color-link;
+  margin: -.2rem;
+  padding: .2rem;
+  text-decoration: none;
+
+  &:visited { color: $color-link-visited; }
+  &:hover { color: $color-link-hover; text-decoration: underline; }
+  &:active { color: $color-text; }
+}
+
+.content {
+  @include border-box;
+  @include clearfix;
+  padding: 0 1em;
+  position: relative;
+  width: 100%;
+}
+
+// Base Styles: Tablets —————————————————————— •
+// ——————————————————————————————————————————— •
+
+@include responsive-break-point(640px) {
+
+}
+
+// Base Styles: Desktop —————————————————————— •
+// ——————————————————————————————————————————— •
+
+@include responsive-break-point(800px) {
+  .content { max-width: 960px; }
+}
+
+
+// Fix: iOS Font Sizing —————————————————————— •
+// ——————————————————————————————————————————— •
+
+@media screen and (max-device-width: 480px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+  }
+}
+
+// Components ———————————————————————————————— •
+// ——————————————————————————————————————————— •
+
+@import
+  'components/navigation',
+  'components/footer';
+
+
+// Pages ————————————————————————————————————— •
+// ——————————————————————————————————————————— •
+
+@import
+  'pages/home';

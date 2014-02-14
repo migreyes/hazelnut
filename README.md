@@ -7,9 +7,9 @@ This is a [Jekyll](http://jekyllrb.com) template which uses Sass and CoffeeScrip
 =====
 
 ### Websites started from this template:
-[mig.io](http://mig.io), my personal site.
-[humblpeied.com](http://humblepied.com), a video interview site.
-[basecamp.com](http://basecamp.com), the marketing site for Basecamp.
+[mig.io](http://mig.io), my personal site.  
+[humblpeied.com](http://humblepied.com), a video interview site.  
+[basecamp.com](http://basecamp.com), the marketing site for Basecamp.  
 [basecamp.com/help](http://basecamp.com/help), the help documentation site for Basecamp.
 
 =====

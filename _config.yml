@@ -1,12 +1,12 @@
-title: Mig Reyes
-author: Mig Reyes
-subtitle: "Designer, Basecamp"
-description: Mig is a designer at Basecamp focused on making good things for good people.
+title: Website Name
+author: Your Name
+subtitle: "A nice static website, ready for design."
+description: "A nice static website, ready for design."
 
-github: http://github.com/migreyes
-twitter: http://twitter.com/migreyes
-dribbble: http://dribbble.com/migreyes
-instagram: http://instagram.com/migreyes
+github: username
+twitter: username
+dribbble: username
+instagram: username
 
 source: ./_source
 destination: public

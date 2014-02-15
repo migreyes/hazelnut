@@ -3,23 +3,15 @@
 
 .footer {
   @include border-box;
+  margin: 1em auto;
+  width: 100%;
 }
-
-// Footer: Tablet ———————————————————————————— •
-// ——————————————————————————————————————————— •
-
-@include responsive-break-point(640px) {
-  .footer {
-
-  }
-}
-
 
 // Footer: Desktop ——————————————————————————— •
 // ——————————————————————————————————————————— •
 
 @include responsive-break-point(768px) {
   .footer {
-
+    max-width: 960px;
   }
 }

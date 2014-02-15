@@ -35,7 +35,7 @@ a {
 .content {
   @include border-box;
   @include clearfix;
-  padding: 0 1em;
+  margin: 0 auto;
   position: relative;
   width: 100%;
 }
@@ -77,4 +77,5 @@ a {
 // ——————————————————————————————————————————— •
 
 @import
+  'pages/about',
   'pages/home';

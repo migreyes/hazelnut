@@ -1,8 +1,15 @@
 // Navigation ———————————————————————————————— •
 // ——————————————————————————————————————————— •
 
-.nav {
+.navigation {
   @include border-box;
+  margin: 1em auto;
+  width: 100%;
+}
+
+.navigation-home {
+  font-size: 2em;
+  font-weight: bold;
 }
 
 
@@ -10,7 +17,7 @@
 // ——————————————————————————————————————————— •
 
 @include responsive-break-point(768px) {
-  .nav {
-
+  .navigation {
+    max-width: 960px;
   }
 }

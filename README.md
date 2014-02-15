@@ -8,7 +8,7 @@ This is a [Jekyll](http://jekyllrb.com) template which uses Sass and CoffeeScrip
 
 ### Websites started from this template:
 [mig.io](http://mig.io), my personal site.  
-[humblpeied.com](http://humblepied.com), a video interview site.  
+[humblepied.com](http://humblepied.com), a video interview site.  
 [basecamp.com](http://basecamp.com), the marketing site for Basecamp.  
 [basecamp.com/help](http://basecamp.com/help), the help documentation site for Basecamp.
 
@@ -22,6 +22,32 @@ This is a [Jekyll](http://jekyllrb.com) template which uses Sass and CoffeeScrip
 `rake view` builds a fresh copy of your site, then opens it locally.
 
 `rake view:xip` generates an xip.io friendly URL and opens it.
+
+=====
+
+### Adding new JavaScripts:
+
+There’s no asset pipeline, but our `rake` tasks will automatically join any `.coffee` files we create into one file automatically for us.
+
+All .coffee files should go into: `_source/_assets/coffescript/`  
+Any external JavaScript should go into: `_source/assets/javascript/`
+
+=====
+
+### Adding new stylesheets:
+
+Since thhere’s no asset pipeline, when we’re adding a new stylesheet we’ll need to do just two things. Let’s pretend we want to add a new stylesheet for an About page on our new site.
+
+**First,** we’ll add our underscore-named file to the proper directory.  
+In our case, we’ll add this: `_source/_assets/sass/pages/_about.scss`
+
+**Last,** we’ll define our new stylesheet inside the main **style.scss** file.
+
+```css
+@import
+  'pages/about', /* Adding a stylesheet for an About page. */
+  'pages/home';
+```
 
 =====
 

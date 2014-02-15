@@ -4,7 +4,7 @@
 ### About this site template:
 This is a [Jekyll](http://jekyllrb.com) template which uses Sass and CoffeeScript for assets, and Rake tasks for handy help with development. It assumes you’re using [Pow to serve your site](http://pow.cx) locally. Since this is geared for designers starting from scratch, there’s no styling.
 
-If you’re a developer looking for pre-designed Jekyll themes, I’d recommend checking out [Poole](http://getpoole.com) by Mark Otto.
+If you’re a developer looking for pre-designed Jekyll themes, I’d recommend [Poole](http://getpoole.com) by Mark Otto.
 
 =====
 

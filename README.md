@@ -19,11 +19,12 @@ If you’re a developer looking for pre-designed Jekyll themes, I’d recommend 
 
 ### First time setup:
 
-Open the `Rakefile` and update the top variables with your preferred Pow address, your actual website URL, and as a bonus, your GitHub repository URL. From here, you can fire off a `rake pow` to easily generate your .dev address, which the rest of the `rake` commands depend on having already set up.
+1. Edit the `Rakefile` to add your Pow name, live URL, and GitHub repo
+2. Edit the `_config.yml` to put in your own name and social media handles
 
 =====
 
-### Basic `rake` commands you’ll commonly use:
+### Basic `rake` tasks you’ll commonly use:
 
 `rake` to watch and update your HTML, Coffee and Sass.
 
@@ -34,6 +35,8 @@ Open the `Rakefile` and update the top variables with your preferred Pow address
 `rake view:xip` generates an [xip.io](http://xip.io) friendly URL and opens it.
 
 `rake view:github` to head to your GitHub repository.
+
+And as always, `rake -T` will provide you a list of all tasks.
 
 =====
 

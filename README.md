@@ -12,18 +12,28 @@ If you’re a developer looking for pre-designed Jekyll themes, I’d recommend 
 [mig.io](http://mig.io), my personal site.  
 [humblepied.com](http://humblepied.com), a video interview site. (View the [repo](http://github.com/migreyes/humblepied).)  
 [basecamp.com](http://basecamp.com), the marketing site for Basecamp.  
-[basecamp.com/help](http://basecamp.com/help), the help documentation site for Basecamp.
+[basecamp.com/help](http://basecamp.com/help), the help documentation site for Basecamp.  
+[37signals.com/incoming-transmission](http://37signals.com/incoming-transmission/), an archive of the best of the web.
+
+=====
+
+### First time setup:
+
+Open the `Rakefile` and update the top variables with your preferred Pow address, your actual website URL, and as a bonus, your GitHub repository URL. From here, you can fire off a `rake pow` to easily generate your .dev address, which the rest of the `rake` commands depend on having already set up.
 
 =====
 
 ### Basic `rake` commands you’ll commonly use:
+
 `rake` to watch and update your HTML, Coffee and Sass.
 
 `rake build` to build a clean, compressed copy of the site.
 
 `rake view` builds a fresh copy of your site, then opens it locally.
 
-`rake view:xip` generates an xip.io friendly URL and opens it.
+`rake view:xip` generates an [xip.io](http://xip.io) friendly URL and opens it.
+
+`rake view:github` to head to your GitHub repository.
 
 =====
 

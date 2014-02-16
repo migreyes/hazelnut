@@ -56,7 +56,7 @@ end
 
 desc "Upload a fresh copy of the site to your server."
 task :deploy => [:build] do
-  puts "Deploying at site.com!"
+  puts "Deploying at http://#{url_live}!"
   system "rsync -avze 'ssh -p 22' --delete public/ #{deploy_user}:#{deploy_path}"
 end
 

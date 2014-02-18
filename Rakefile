@@ -1,3 +1,5 @@
+require "json"
+
 url_pow     = "website"
 url_live    = "website.com"
 
@@ -95,5 +97,21 @@ namespace :view do
   desc "View your project on GitHub."
   task :github do
     system "open http://github.com/#{github_repo}"
+  end
+
+  desc "A quick glimpse at your GitHub repo’s watchers, stars, and forks."
+  namespace :github do
+    task :stats do
+      puts "Downloading GitHub repo data through their API…"
+      json = `curl https://api.github.com/repos/#{github_repo}`
+      repo = JSON.parse(json)
+      puts ""
+      puts "-------------------------------------------------------------------"
+      puts ""
+      puts "#{github_repo} has #{repo['subscribers_count']} watchers, #{repo['stargazers_count']} stars and #{repo['forks_count']} forks."
+      puts ""
+      puts "-------------------------------------------------------------------"
+      puts ""
+    end
   end
 end

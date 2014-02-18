@@ -9,8 +9,8 @@ If you’re a developer looking for pre-designed Jekyll themes, I’d recommend 
 =====
 
 ### Websites started from this template:
-[mig.io](http://mig.io), my personal site.  
-[humblepied.com](http://humblepied.com), a video interview site. (View the [repo](http://github.com/migreyes/humblepied).)  
+[mig.io](http://mig.io), my personal site. (View [the repo](http://github.com/migreyes/migreyes).)  
+[humblepied.com](http://humblepied.com), a video interview site. (View [the repo](http://github.com/migreyes/humblepied).)  
 [basecamp.com](http://basecamp.com), the marketing site for Basecamp.  
 [basecamp.com/help](http://basecamp.com/help), the help documentation site for Basecamp.  
 [37signals.com/incoming-transmission](http://37signals.com/incoming-transmission/), an archive of the best of the web.
@@ -27,8 +27,6 @@ If you’re a developer looking for pre-designed Jekyll themes, I’d recommend 
 ### Basic `rake` tasks you’ll commonly use:
 
 `rake` to watch and update your HTML, Coffee and Sass.
-
-`rake build` to build a clean, compressed copy of the site.
 
 `rake view` builds a fresh copy of your site, then opens it locally.
 

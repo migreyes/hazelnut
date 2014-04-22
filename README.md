@@ -13,7 +13,8 @@ If you’re a developer looking for pre-designed Jekyll themes, I’d recommend 
 [humblepied.com](http://humblepied.com), a video interview site. (View [the repo](http://github.com/migreyes/humblepied).)  
 [basecamp.com](http://basecamp.com), the marketing site for Basecamp.  
 [basecamp.com/help](http://basecamp.com/help), the help documentation site for Basecamp.  
-[37signals.com/incoming-transmission](http://37signals.com/incoming-transmission/), an archive of the best of the web.
+[37signals.com/incoming-transmission](http://37signals.com/incoming-transmission/), an archive of the best of the web.  
+[thedistance.com](http://thedistance.com), a new online magazine about hard-working, long-lasting businesses and the people behind them.  
 
 =====
 

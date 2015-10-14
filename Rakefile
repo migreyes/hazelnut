@@ -19,7 +19,7 @@ end
 desc "Design, write, and edit live."
 task :default => [:clean] do
   pids = [
-    spawn("jekyll -w build"),
+    spawn("jekyll serve"),
     spawn("sass --watch _source/_assets/sass:_source/assets/stylesheets"),
     spawn("coffee --bare --watch --join _source/assets/javascript/scripts.js --compile _source/_assets/coffeescript/*.coffee")
   ]

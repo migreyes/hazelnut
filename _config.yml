@@ -14,4 +14,4 @@ exclude: [public, Gemfile, Gemfile.lock, Rakefile, README.md]
 
 permalink: /:categories/:title
 markdown: kramdown
-pygments: true
+highlighter: pygments

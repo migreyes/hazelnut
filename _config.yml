@@ -13,5 +13,5 @@ destination: public
 exclude: [public, Gemfile, Gemfile.lock, Rakefile, README.md]
 
 permalink: /:categories/:title
-markdown: rdiscount
-pygments: true
+markdown: kramdown
+highlighter: pygments
